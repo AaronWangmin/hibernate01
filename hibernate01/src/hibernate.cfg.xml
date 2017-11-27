@@ -1,0 +1,25 @@
+<!-- ~ Hibernate, Relational Persistence for Idiomatic Java ~ ~ License: 
+	GNU Lesser General Public License (LGPL), version 2.1 or later. ~ See the 
+	lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>. -->
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	<!-- hibernate的方言，用来连接的数据库 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	<!-- 数据库的连接类 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+	<!-- 数据库连接字符串、用户名、密码 -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shbd_hibernate</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">800421</property>
+	<!-- 在使用hibernate时会显示相应的sql -->
+		<property name="show_sql">true</property>
+	<!-- 会自动完成类到数据表的转换 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+	<!-- 加入实体类的映射文件 -->	
+		<mapping resource="com/shbd/model/User.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
